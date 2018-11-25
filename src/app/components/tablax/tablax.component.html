@@ -1,0 +1,37 @@
+<div class="container m-5">
+<table class="table" *ngIf="model === 'Alumno'">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Carne</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Nombres</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of items; let i = index;">
+    <tr>
+      <th scope="row">{{ i + 1}}</th>
+      <td>{{item.Carne}}</td>
+      <td>{{item.Apellidos}}</td>
+      <td>{{item.Nombres}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table" *ngIf="model === 'Carrera'">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Codigo</th>
+      <th scope="col">Descripcion</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of items; let i = index;">
+    <tr>
+      <th scope="row">{{ i + 1}}</th>
+      <td>{{item.CarreraId}}</td>
+      <td>{{item.Descripcion}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

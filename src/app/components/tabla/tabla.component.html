@@ -1,0 +1,49 @@
+<div class="container m-5">
+    <button (click) = "add()" class="btn btn-outline-primary">Agregar</button>
+    <br>
+    <br>
+    <table class="table" *ngIf="clase === 'carrera'">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Carrera</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of items; let i = index">
+          <tr>
+            <th scope="row">{{i+1}}</th>
+            <td>{{ item.CarreraId }}</td>
+            <td>{{ item.Descripcion }}</td>
+            <td>
+              <button (click)="delete()" class="btn btn-outline-danger">Delete</button>
+              <button (click)="update()" class="btn btn-outline-dark">Update</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table" *ngIf="clase === 'alumno'">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Carne</th>
+              <th scope="col">Apellidos</th>
+              <th scope="col">Nombres</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of items; let i = index">
+            <tr>
+              <th scope="row">{{i+1}}</th>
+              <td>{{ item.Carne }}</td>
+              <td>{{ item.Apellidos }}</td>
+              <td>{{ item.Nombres }}</td>
+              <td>
+                  <button (click)="delete()" class="btn btn-outline-danger">Delete</button>
+                  <button (click)="update()" class="btn btn-outline-dark">Update</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+</div>
